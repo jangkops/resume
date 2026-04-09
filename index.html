@@ -6,11 +6,18 @@
   <title>장창근 - 이력서 | DevOps & Cloud Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  </noscript>
 </head>
 <body>
+  <canvas id="ambientCanvas"></canvas>
 
   <!-- ═══════════════════════════════════════════ -->
   <!-- 1. Header (resume.html style)              -->
@@ -18,7 +25,7 @@
   <header class="resume-header">
     <div class="container">
       <div class="resume-header__top">
-        <img src="https://photo.jtbc.co.kr/news/jam_photo/202507/21/8626a715-58ad-47af-ac94-b1028da06c1f.jpg" alt="프로필 사진" class="resume-header__photo">
+        <img src="https://photo.jtbc.co.kr/news/jam_photo/202507/21/8626a715-58ad-47af-ac94-b1028da06c1f.jpg" alt="프로필 사진" class="resume-header__photo" width="120" height="120" decoding="async" fetchpriority="high">
         <h1>장창근</h1>
         <span class="resume-header__role">DevOps / Cloud / Platform Engineer</span>
         <p class="resume-header__desc">
@@ -1206,7 +1213,7 @@
     </div>
   </footer>
 
-  <script src="js/project-tabs.js"></script>
+  <script src="js/project-tabs.js" defer></script>
 
   <!-- Floating Navigation -->
   <nav class="float-nav" id="floatNav">
@@ -1230,8 +1237,8 @@
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
   </nav>
-  <script src="js/float-nav.js"></script>
-
-  <script src="js/scroll-reveal.js"></script>
+  <script src="js/float-nav.js" defer></script>
+  <script src="js/scroll-reveal.js" defer></script>
+  <script src="js/ambient.js" defer></script>
 </body>
 </html>
