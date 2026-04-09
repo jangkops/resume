@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JCG - 이력서 | DevOps & Cloud Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white: #ffffff;
+      --bg-alt: #f8f9fa;
+      --surface: #ffffff;
+      --border: #e5e7eb;
+      --border-light: #f0f1f3;
+      --text: #1a1a2e;
+      --text-secondary: #4a5568;
+      --text-dim: #718096;
+      --accent: #2563eb;
+      --accent-light: #dbeafe;
+      --accent-dark: #1d4ed8;
+      --green: #059669;
+      --green-light: #d1fae5;
+      --orange: #d97706;
+      --orange-light: #fef3c7;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --red: #dc2626;
+      --red-light: #fee2e2;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,.05);
+      --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.04);
+      --shadow-md: 0 4px 6px rgba(0,0,0,.06), 0 2px 4px rgba(0,0,0,.04);
+      --shadow-lg: 0 10px 15px rgba(0,0,0,.06), 0 4px 6px rgba(0,0,0,.03);
+      --radius: 10px;
+      --radius-sm: 6px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'SUIT', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Header ── */
+    .resume-header {
+      padding: 64px 0 48px;
+      text-align: center;
+      background: var(--white);
+    }
+    .resume-header__top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .resume-header h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+    .resume-header__role {
+      display: inline-block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 6px 16px;
+      border-radius: 20px;
+      letter-spacing: 0.3px;
+    }
+    .resume-header__desc {
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin: 12px auto 0;
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+    .resume-header__contact {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .resume-header__contact a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .2s;
+    }
+    .resume-header__contact a:hover { color: var(--accent); }
+    .resume-header__divider {
+      width: 48px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin: 32px auto 0;
+    }
+
+    /* ── Section ── */
+    .section {
+      padding: 48px 0;
+    }
+    .section--alt {
+      background: var(--bg-alt);
+    }
+    .section__title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+      letter-spacing: -0.3px;
+    }
+    .section__title i {
+      color: var(--accent);
+      font-size: 1rem;
+      width: 20px;
+      text-align: center;
+    }
+    .section__subtitle {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      margin-bottom: 28px;
+      padding-left: 30px;
+    }
+
+    /* ── Tech Stack ── */
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 10px;
+    }
+    .stack-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      transition: box-shadow .2s, border-color .2s;
+    }
+    .stack-card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow);
+    }
+    .stack-card strong {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .stack-card span {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+
+    /* ── Certifications ── */
+    .cert-group {
+      margin-bottom: 28px;
+    }
+    .cert-group:last-child { margin-bottom: 0; }
+    .cert-group__title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      padding-left: 14px;
+      border-left: 3px solid var(--accent);
+    }
+    .cert-group--cloud .cert-group__title { border-color: var(--accent); }
+    .cert-group--dev .cert-group__title { border-color: var(--green); }
+    .cert-group--oa .cert-group__title { border-color: var(--orange); }
+    .cert-group--etc .cert-group__title { border-color: var(--purple); }
+
+    .cert-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .cert-item {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 10px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      transition: border-color .2s;
+    }
+    .cert-item:hover { border-color: var(--border); }
+    .cert-item__name {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cert-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .cert-badge--aws { background: var(--accent-light); color: var(--accent); }
+    .cert-badge--oci { background: var(--red-light); color: var(--red); }
+    .cert-badge--k8s { background: var(--purple-light); color: var(--purple); }
+    .cert-badge--ai { background: var(--green-light); color: var(--green); }
+    .cert-badge--sql { background: var(--orange-light); color: var(--orange); }
+    .cert-badge--it { background: var(--accent-light); color: var(--accent); }
+    .cert-badge--oa { background: var(--orange-light); color: var(--orange); }
+    .cert-badge--etc { background: var(--purple-light); color: var(--purple); }
+    .cert-item__date {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      white-space: nowrap;
+    }
+    .cert-item__date--progress {
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    /* ── Knowledge Map ── */
+    .knowledge-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 14px;
+    }
+    .knowledge-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      transition: box-shadow .2s, transform .15s;
+    }
+    .knowledge-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-1px);
+    }
+    .knowledge-card__eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .knowledge-card strong {
+      display: block;
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 6px 0 8px;
+      color: var(--text);
+    }
+    .knowledge-card p {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      margin-bottom: 14px;
+      line-height: 1.65;
+    }
+    .chip-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .chip {
+      background: var(--bg-alt);
+      border: 1px solid var(--border-light);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* ── Projects ── */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow .2s, transform .15s, border-color .2s;
+    }
+    .project-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+      border-color: var(--accent);
+    }
+    .project-card__type {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 6px;
+    }
+    .project-card__type--gitlab { color: var(--orange); }
+    .project-card__type--github { color: var(--text-secondary); }
+    .project-card strong {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .project-card p {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      margin-bottom: 14px;
+      flex: 1;
+      line-height: 1.65;
+    }
+    .project-card__link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* ── Contact Footer ── */
+    .contact-section {
+      text-align: center;
+      padding: 48px 0;
+      border-top: 1px solid var(--border);
+    }
+    .contact-section p {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+    .contact-section__email {
+      color: var(--accent);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .contact-section__email:hover { color: var(--accent-dark); }
+    .contact-section__links {
+      margin-top: 16px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+    .contact-section__links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .2s;
+    }
+    .contact-section__links a:hover { color: var(--accent); }
+
+    footer {
+      text-align: center;
+      padding: 20px 0 40px;
+      color: var(--text-dim);
+      font-size: 0.78rem;
+    }
+
+    /* ── Print ── */
+    @media print {
+      body { background: #fff; }
+      .section--alt { background: #fff; }
+      .container { max-width: 100%; padding: 0 16px; }
+      .resume-header { padding: 24px 0 20px; }
+      .section { padding: 20px 0; }
+      .stack-card, .cert-item, .knowledge-card, .project-card {
+        border-color: #ddd;
+        box-shadow: none;
+        break-inside: avoid;
+      }
+      .project-card:hover, .knowledge-card:hover, .stack-card:hover {
+        transform: none;
+        box-shadow: none;
+      }
+      .resume-header__contact a,
+      .contact-section__links a,
+      .contact-section__email { color: var(--text); }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .container { padding: 0 16px; }
+      .resume-header { padding: 40px 0 32px; }
+      .resume-header h1 { font-size: 1.6rem; }
+      .section { padding: 32px 0; }
+      .stack-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .knowledge-grid { grid-template-columns: 1fr; }
+      .project-grid { grid-template-columns: 1fr; }
+      .resume-header__contact { gap: 12px; }
+      .cert-item { padding: 10px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="resume-header">
+    <div class="container">
+      <div class="resume-header__top">
+        <h1>JCG</h1>
+        <span class="resume-header__role">DevOps / Cloud / Platform Engineer</span>
+        <p class="resume-header__desc">
+          클라우드, DevOps, 플랫폼 엔지니어링, 운영 자동화를 중심으로 실무 지식과 프로젝트 경험을 보유한 인프라 아키텍트입니다.
+        </p>
+        <div class="resume-header__contact">
+          <a href="mailto:jangk34@naver.com"><i class="fa-solid fa-envelope"></i> jangk34@naver.com</a>
+          <a href="tel:+821025661153"><i class="fa-solid fa-phone"></i> 010-2566-1153</a>
+          <a href="https://cause.tistory.com/" target="_blank"><i class="fa-solid fa-blog"></i> cause.tistory.com</a>
+          <a href="https://github.com/jangkops" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="https://gitlab.com/exem-qa" target="_blank"><i class="fa-brands fa-gitlab"></i> GitLab</a>
+        </div>
+      </div>
+      <div class="resume-header__divider"></div>
+    </div>
+  </header>
+
+  <!-- Tech Stack -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section__title"><i class="fa-solid fa-layer-group"></i> 기술 스택</h2>
+      <p class="section__subtitle">실무에서 활용 중인 핵심 기술과 도구입니다.</p>
+      <div class="stack-grid">
+        <div class="stack-card"><strong>Programing Language</strong><span>Python, Java, BashShell, JavaScript, TypeScript, React JS</span></div>
+        <div class="stack-card"><strong>Kubernetes</strong><span>Container Orchestration</span></div>
+        <div class="stack-card"><strong>Docker</strong><span>Container Runtime</span></div>
+        <div class="stack-card"><strong>AWS</strong><span>EC2, S3, VPC, CloudFront, ECS, Fargate, DataSync, Athena, ElastiCache</span></div>
+        <div class="stack-card"><strong>Azure</strong><span>Microsoft Cloud</span></div>
+        <div class="stack-card"><strong>GitLab</strong><span>Runner CI/CD</span></div>
+        <div class="stack-card"><strong>GitHub</strong><span>GitOps CI/CD, Actions</span></div>
+        <div class="stack-card"><strong>Argo CD</strong><span>Deployment Automation</span></div>
+        <div class="stack-card"><strong>Prometheus / Grafana</strong><span>Monitoring</span></div>
+        <div class="stack-card"><strong>Linux</strong><span>System Operations</span></div>
+        <div class="stack-card"><strong>Server</strong><span>Middleware / Runtime</span></div>
+        <div class="stack-card"><strong>Terraform</strong><span>Infrastructure as Code</span></div>
+        <div class="stack-card"><strong>Ansible</strong><span>Configuration Management</span></div>
+        <div class="stack-card"><strong>Elastic Stack</strong><span>Logging &amp; Search</span></div>
+        <div class="stack-card"><strong>Kafka</strong><span>Distributed Messaging</span></div>
+        <div class="stack-card"><strong>OpenStack</strong><span>Private Cloud</span></div>
+        <div class="stack-card"><strong>Datastore</strong><span>Redis, Persistence Layer</span></div>
+        <div class="stack-card"><strong>Database</strong><span>Oracle, PostgreSQL, MariaDB, MongoDB, SAP HANA</span></div>
+        <div class="stack-card"><strong>Datasaker</strong><span>SaaS Monitoring</span></div>
+        <div class="stack-card"><strong>Open AI / Bedrock</strong><span>AI Integration &amp; LLM Pipeline</span></div>
+        <div class="stack-card"><strong>Eformsign</strong><span>Document Workflow</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="section section--alt">
+    <div class="container">
+      <h2 class="section__title"><i class="fa-solid fa-certificate"></i> 자격 취득사항</h2>
+      <p class="section__subtitle">클라우드, 개발, 실무 분야별 취득 자격입니다.</p>
+
+      <div class="cert-group cert-group--cloud">
+        <h3 class="cert-group__title">Cloud Certifications</h3>
+        <div class="cert-list">
+          <div class="cert-item">
+            <div class="cert-item__name"><span class="cert-badge cert-badge--aws">AWS</span> AWS Certified DevOps Engineer - Professional</div>
+            <span class="cert-item__date">2025.07.06</span>
+          </div>
+          <div class="cert-item">
+            <div class="cert-item__name"><span class="cert-badge cert-badge--oci">OCI</span> Oracle Cloud Infrastructure DevOps Professional</div>
+            <span class="cert-item__date">2025.07.15</span>
+          </div>
+          <div class="cert-item">
+            <div class="cert-item__name"><span class="cert-badge cert-badge--aws">AWS</span> AWS Certified Solutions Architect - Associate (SAA)</div>
+            <span class="cert-item__date">2023.08.30</span>
+          </div>
+          <div class="cert-item">
+            <div class="cert-item__name"><span class="cert-badge cert-badge--k8s">CKA</span> Certified Kubernetes Administrator</div>
+            <span class="cert-item__date">2023.04.04</span>
+          </div>
+          <div class="cert-item">
+            <div class="cert-item__name"><span class="cert-badge cert-badge--oci">OCI</span> Oracle Cloud Data Management Foundations Associate</div>
+            <span class="cert-item__date">2023.09.18</span>
+          </div>
+          <div class="cert-item">
+            <div class="cert-item__name"><span class="cert-badge cert-badge--oci">OCI</span> Oracle Cloud Infrastructure Foundations Associate</div>
+            <span class="cert-item__date">2023.09.18</span>
+          </div>
+          <div class="cert-item">
+            <div class="cert-item__name"><span class="cert-badge cert-badge--ai">AI</span> AWS Generative AI Developer - Professional</div>
+            <span class="cert-item__date cert-item__date--progress">취득 중</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-group cert-group--dev">
+        <h3 class="cert-group__title">개발 / 데이터 자격</h3>
+        <div class="cert-list">
+          <div class="cert-item">
+            <div class="cert-item__name"><span class="cert-badge cert-badge--sql">SQL</span> SQLD (SQL Developer)</div>
+            <span class="cert-item__date">2022.06.24</span>
+          </div>
+          <div class="cert-item">
+            <div class="cert-item__name"><span class="cert-badge cert-badge--it">IT</span> 정보처리 산업기사</div>
+            <span class="cert-item__date">2020.06.26</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-group cert-group--oa">
+        <h3 class="cert-group__title">OA / 실무 활용 자격</h3>
+        <div class="cert-list">
+          <div class="cert-item">
+            <div class="cert-item__name"><span class="cert-badge cert-badge--oa">OA</span> 사무자동화 산업기사</div>
+            <span class="cert-item__date">2020.11.12</span>
+          </div>
+          <div class="cert-item">
+            <div class="cert-item__name"><span class="cert-badge cert-badge--oa">OA</span> 컴퓨터활용능력 1급</div>
+            <span class="cert-item__date">2020.11.20</span>
+          </div>
+          <div class="cert-item">
+            <div class="cert-item__name"><span class="cert-badge cert-badge--oa">OA</span> 워드프로세서 1급</div>
+            <span class="cert-item__date">2020.02.21</span>
+          </div>
+          <div class="cert-item">
+            <div class="cert-item__name"><span class="cert-badge cert-badge--oa">GTQ</span> GTQ 1급</div>
+            <span class="cert-item__date">2020.09.11</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-group cert-group--etc">
+        <h3 class="cert-group__title">기타 자격</h3>
+        <div class="cert-list">
+          <div class="cert-item">
+            <div class="cert-item__name"><span class="cert-badge cert-badge--etc">HIS</span> 한국사 1급</div>
+            <span class="cert-item__date">2020.07.10</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Knowledge Map -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section__title"><i class="fa-solid fa-map"></i> Knowledge Map</h2>
+      <p class="section__subtitle">핵심 기술 도메인별 역량과 경험 범위입니다.</p>
+      <div class="knowledge-grid">
+        <div class="knowledge-card">
+          <span class="knowledge-card__eyebrow">AWS</span>
+          <strong>Cloud &amp; Infrastructure</strong>
+          <p>인프라 구성부터 보안, 데이터 전송, 컨테이너 배포까지 AWS 기반 클라우드 운영 역량</p>
+          <div class="chip-cloud">
+            <span class="chip">EC2</span>
+            <span class="chip">S3</span>
+            <span class="chip">VPC</span>
+            <span class="chip">CloudFront</span>
+            <span class="chip">ECS</span>
+            <span class="chip">Fargate</span>
+            <span class="chip">Lambda</span>
+            <span class="chip">DataSync</span>
+            <span class="chip">Athena</span>
+            <span class="chip">ElastiCache</span>
+            <span class="chip">IAM</span>
+            <span class="chip">KMS</span>
+            <span class="chip">GuardDuty</span>
+            <span class="chip">API Gateway</span>
+            <span class="chip">Kinesis</span>
+            <span class="chip">Redshift</span>
+            <span class="chip">Aurora</span>
+            <span class="chip">Glue</span>
+            <span class="chip">SNS</span>
+            <span class="chip">Step Function</span>
+          </div>
+        </div>
+        <div class="knowledge-card">
+          <span class="knowledge-card__eyebrow">Kubernetes</span>
+          <strong>Runbook &amp; Training</strong>
+          <p>본부 대상 교육자료 제작, 환경 설치, CNI, Helm, 백업, 운영 이슈까지 클러스터 운영 흐름</p>
+          <div class="chip-cloud">
+            <span class="chip">환경 설치 및 세팅</span>
+            <span class="chip">Open Lens</span>
+            <span class="chip">minikube</span>
+            <span class="chip">CNI</span>
+            <span class="chip">Containerd</span>
+            <span class="chip">Loadbalancer</span>
+            <span class="chip">Helm</span>
+            <span class="chip">Kube Backup</span>
+            <span class="chip">ReplicaSet</span>
+            <span class="chip">kube-proxy</span>
+            <span class="chip">CKA</span>
+          </div>
+        </div>
+        <div class="knowledge-card">
+          <span class="knowledge-card__eyebrow">Docker</span>
+          <strong>Container Runtime</strong>
+          <p>본부 대상 교육자료 제작, Docker Compose 운영, 멀티 OS 빌드 및 이미지 최적화</p>
+          <div class="chip-cloud">
+            <span class="chip">Docker Compose</span>
+            <span class="chip">CentOS</span>
+            <span class="chip">RedHat</span>
+            <span class="chip">Ubuntu</span>
+            <span class="chip">Oracle RAC</span>
+            <span class="chip">이미지 최적화</span>
+            <span class="chip">Openssh</span>
+          </div>
+        </div>
+        <div class="knowledge-card">
+          <span class="knowledge-card__eyebrow">Terraform</span>
+          <strong>Infrastructure as Code</strong>
+          <p>AWS/Azure 인프라 프로비저닝, 상태 관리, 워크플로우 적용까지 IaC 운영 역량</p>
+          <div class="chip-cloud">
+            <span class="chip">Provider</span>
+            <span class="chip">Variables</span>
+            <span class="chip">tfenv</span>
+            <span class="chip">상태 관리</span>
+            <span class="chip">워크플로우</span>
+            <span class="chip">Azure 프로비저닝</span>
+            <span class="chip">AWS 프로비저닝</span>
+            <span class="chip">Dynamic 블록</span>
+            <span class="chip">for-each</span>
+          </div>
+        </div>
+        <div class="knowledge-card">
+          <span class="knowledge-card__eyebrow">CI/CD</span>
+          <strong>GitLab &amp; GitHub &amp; Argo CD</strong>
+          <p>GitLab Runner, GitHub Actions, Argo CD를 활용한 CI/CD 파이프라인 구축 및 GitOps 운영</p>
+          <div class="chip-cloud">
+            <span class="chip">GitLab CI/CD</span>
+            <span class="chip">GitLab API</span>
+            <span class="chip">GitHub Actions</span>
+            <span class="chip">GitOps</span>
+            <span class="chip">Argo CD</span>
+            <span class="chip">Image Updater</span>
+            <span class="chip">멀티 클러스터 배포</span>
+            <span class="chip">동기화 (Sync)</span>
+          </div>
+        </div>
+        <div class="knowledge-card">
+          <span class="knowledge-card__eyebrow">Monitoring</span>
+          <strong>Prometheus &amp; Grafana &amp; Datasaker</strong>
+          <p>Metric Exporter 설정, CRD 커스텀, SaaS 모니터링 도구까지 관측성 스택 운영</p>
+          <div class="chip-cloud">
+            <span class="chip">Prometheus</span>
+            <span class="chip">Grafana</span>
+            <span class="chip">Metric Exporter</span>
+            <span class="chip">CRD 분리</span>
+            <span class="chip">Datasaker</span>
+          </div>
+        </div>
+        <div class="knowledge-card">
+          <span class="knowledge-card__eyebrow">Elastic Stack</span>
+          <strong>Logging &amp; Search</strong>
+          <p>Rook Ceph 기반 스토리지 + ELK 스택으로 로깅 파이프라인 구축</p>
+          <div class="chip-cloud">
+            <span class="chip">Elasticsearch</span>
+            <span class="chip">Kibana</span>
+            <span class="chip">Filebeat</span>
+            <span class="chip">Logstash</span>
+            <span class="chip">Rook Ceph</span>
+          </div>
+        </div>
+        <div class="knowledge-card">
+          <span class="knowledge-card__eyebrow">Linux &amp; Server</span>
+          <strong>System Operations</strong>
+          <p>CentOS, RedHat, Ubuntu 기반 시스템 운영, SYSLOG 백업, 파일 전송 및 동기화</p>
+          <div class="chip-cloud">
+            <span class="chip">CentOS</span>
+            <span class="chip">RedHat</span>
+            <span class="chip">Ubuntu</span>
+            <span class="chip">SSH Client</span>
+            <span class="chip">SYSLOG 백업</span>
+            <span class="chip">파일 전송</span>
+            <span class="chip">동기화</span>
+            <span class="chip">VirtualBox</span>
+            <span class="chip">Xen Server</span>
+          </div>
+        </div>
+        <div class="knowledge-card">
+          <span class="knowledge-card__eyebrow">Database</span>
+          <strong>Engine Coverage</strong>
+          <p>엔진별 특성과 운영 포인트를 분기해 쌓아둔 데이터 계층 운영 역량</p>
+          <div class="chip-cloud">
+            <span class="chip">Oracle</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">MariaDB</span>
+            <span class="chip">MongoDB</span>
+            <span class="chip">SAP HANA</span>
+            <span class="chip">Druid (Apache)</span>
+          </div>
+        </div>
+        <div class="knowledge-card">
+          <span class="knowledge-card__eyebrow">Cloud &amp; Private Cloud</span>
+          <strong>Azure &amp; OpenStack</strong>
+          <p>Azure 포탈/CLI 운영, OpenStack Ubuntu/RedHat 환경 구축 및 Terraform 연동</p>
+          <div class="chip-cloud">
+            <span class="chip">Azure Portal</span>
+            <span class="chip">Azure CLI</span>
+            <span class="chip">OpenStack</span>
+            <span class="chip">Ubuntu 설치</span>
+            <span class="chip">RedHat 설치</span>
+            <span class="chip">Terraform 연동</span>
+          </div>
+        </div>
+        <div class="knowledge-card">
+          <span class="knowledge-card__eyebrow">Messaging &amp; AI</span>
+          <strong>Kafka &amp; Open AI</strong>
+          <p>Apache Kafka 메시지 큐 운영과 ChatGPT/Bedrock 기반 AI 통합 경험</p>
+          <div class="chip-cloud">
+            <span class="chip">Kafka (Apache)</span>
+            <span class="chip">kafka-basics-lab</span>
+            <span class="chip">ChatGPT</span>
+            <span class="chip">Bedrock</span>
+          </div>
+        </div>
+        <div class="knowledge-card">
+          <span class="knowledge-card__eyebrow">Workflow</span>
+          <strong>Eformsign &amp; Automation</strong>
+          <p>전자 문서 워크플로우 AWS/온프레미스 환경 구축 및 마이그레이션</p>
+          <div class="chip-cloud">
+            <span class="chip">Eformsign</span>
+            <span class="chip">AWS</span>
+            <span class="chip">WSL</span>
+            <span class="chip">Onpremise</span>
+            <span class="chip">마이그레이션</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="section section--alt">
+    <div class="container">
+      <h2 class="section__title"><i class="fa-solid fa-diagram-project"></i> Project Archive</h2>
+      <p class="section__subtitle">실무 및 개인 프로젝트 아카이브입니다.</p>
+      <div class="project-grid">
+        <a class="project-card" href="https://gitlab.com/exem-qa" target="_blank" rel="noopener">
+          <span class="project-card__type project-card__type--gitlab">GitLab</span>
+          <strong>Project Integration (통합)</strong>
+          <p>GitLab 프로젝트 통합 관리 및 협업 흐름 정리</p>
+          <div class="chip-cloud">
+            <span class="chip">GitLab</span>
+            <span class="chip">Integration</span>
+          </div>
+          <span class="project-card__link">exem-qa <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.65rem"></i></span>
+        </a>
+
+        <a class="project-card" href="https://gitlab.com/exem-qa" target="_blank" rel="noopener">
+          <span class="project-card__type project-card__type--gitlab">GitLab</span>
+          <strong>APM CI/CD Pipeline Project</strong>
+          <p>Python, Gitlab Runner CI/CD, Kubernetes, Docker Compose를 묶어 운영 흐름을 정리한 프로젝트</p>
+          <div class="chip-cloud">
+            <span class="chip">Python</span>
+            <span class="chip">Gitlab Runner</span>
+            <span class="chip">Kubernetes</span>
+            <span class="chip">Docker Compose</span>
+          </div>
+          <span class="project-card__link">intermax <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.65rem"></i></span>
+        </a>
+
+        <a class="project-card" href="https://gitlab.com/kube-helm-package" target="_blank" rel="noopener">
+          <span class="project-card__type project-card__type--gitlab">GitLab</span>
+          <strong>Kubernetes Helm Package</strong>
+          <p>쿠버네티스 배포 단위를 패키지 관점으로 묶어 재사용성 있게 관리</p>
+          <div class="chip-cloud">
+            <span class="chip">Helm</span>
+            <span class="chip">Chart</span>
+            <span class="chip">Release</span>
+          </div>
+          <span class="project-card__link">kube-helm-package <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.65rem"></i></span>
+        </a>
+
+        <a class="project-card" href="https://gitlab.com/react-movie-reviewer" target="_blank" rel="noopener">
+          <span class="project-card__type project-card__type--gitlab">GitLab</span>
+          <strong>Movie Reviewer</strong>
+          <p>React JS 기반 영화 리뷰/평점 제공 서비스</p>
+          <div class="chip-cloud">
+            <span class="chip">React JS</span>
+            <span class="chip">JavaScript</span>
+          </div>
+          <span class="project-card__link">react <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.65rem"></i></span>
+        </a>
+
+        <a class="project-card" href="https://gitlab.com/playwright8501415" target="_blank" rel="noopener">
+          <span class="project-card__type project-card__type--gitlab">GitLab</span>
+          <strong>DevOps UI PoC</strong>
+          <p>Playwright JS &amp; TypeScript 기반으로 DevOps 플랫폼 자동화 UI를 검증한 PoC</p>
+          <div class="chip-cloud">
+            <span class="chip">Playwright</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">UI Automation</span>
+          </div>
+          <span class="project-card__link">playwright8501415 <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.65rem"></i></span>
+        </a>
+
+        <a class="project-card" href="https://github.com/orgs/devopslabs-jcg/repositories" target="_blank" rel="noopener">
+          <span class="project-card__type project-card__type--github">GitHub</span>
+          <strong>GitOps CI/CD Pipeline</strong>
+          <p>Terraform, AWS, Ceph, Github Action, Argo CD, Prometheus/Grafana, Elastic Stack 통합 파이프라인</p>
+          <div class="chip-cloud">
+            <span class="chip">Terraform</span>
+            <span class="chip">AWS</span>
+            <span class="chip">Argo CD</span>
+            <span class="chip">Elastic Stack</span>
+          </div>
+          <span class="project-card__link">Repository Hub <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.65rem"></i></span>
+        </a>
+
+        <a class="project-card" href="https://github.com/devopslabs-jcg/openstack-lab" target="_blank" rel="noopener">
+          <span class="project-card__type project-card__type--github">GitHub</span>
+          <strong>OpenStack Labs</strong>
+          <p>OpenStack과 Terraform을 엮어 클라우드 운영 실습을 정리한 프로젝트</p>
+          <div class="chip-cloud">
+            <span class="chip">OpenStack</span>
+            <span class="chip">Terraform</span>
+            <span class="chip">Labs</span>
+          </div>
+          <span class="project-card__link">openstack-lab <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.65rem"></i></span>
+        </a>
+
+        <a class="project-card" href="https://github.com/devopslabs-jcg/kafka-basics-lab" target="_blank" rel="noopener">
+          <span class="project-card__type project-card__type--github">GitHub</span>
+          <strong>Kafka Basics Lab</strong>
+          <p>메시지 큐와 Python 흐름을 학습/정리하기 위한 실험 중심 프로젝트</p>
+          <div class="chip-cloud">
+            <span class="chip">Kafka</span>
+            <span class="chip">Python</span>
+            <span class="chip">Message Queue</span>
+          </div>
+          <span class="project-card__link">kafka-basics-lab <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.65rem"></i></span>
+        </a>
+
+        <a class="project-card" href="https://github.com/jangkops/Ansible-Account-Platform" target="_blank" rel="noopener">
+          <span class="project-card__type project-card__type--github">GitHub</span>
+          <strong>Ansible Account Platform</strong>
+          <p>Ansible 기반 계정 관리와 운영 자동화를 플랫폼 관점에서 정리</p>
+          <div class="chip-cloud">
+            <span class="chip">Ansible</span>
+            <span class="chip">Account</span>
+            <span class="chip">Automation</span>
+          </div>
+          <span class="project-card__link">Ansible-Account-Platform <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.65rem"></i></span>
+        </a>
+
+        <a class="project-card" href="https://github.com/jangkops/Bedrock-AI-LLM-Pipeline" target="_blank" rel="noopener">
+          <span class="project-card__type project-card__type--github">GitHub</span>
+          <strong>Bedrock AI LLM Pipeline</strong>
+          <p>Bedrock 기반 LLM 파이프라인과 AI 애플리케이션 흐름을 실험한 저장소</p>
+          <div class="chip-cloud">
+            <span class="chip">Bedrock</span>
+            <span class="chip">LLM</span>
+            <span class="chip">Pipeline</span>
+          </div>
+          <span class="project-card__link">Bedrock-AI-LLM-Pipeline <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.65rem"></i></span>
+        </a>
+
+        <a class="project-card" href="https://github.com/jangkops/Cost-Dashboard-Platform" target="_blank" rel="noopener">
+          <span class="project-card__type project-card__type--github">GitHub</span>
+          <strong>Cost Dashboard Platform</strong>
+          <p>클라우드 비용 흐름을 시각화하고 운영 관점에서 살피기 위한 대시보드 플랫폼</p>
+          <div class="chip-cloud">
+            <span class="chip">Cost</span>
+            <span class="chip">Dashboard</span>
+            <span class="chip">Platform</span>
+          </div>
+          <span class="project-card__link">Cost-Dashboard-Platform <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.65rem"></i></span>
+        </a>
+
+        <a class="project-card" href="https://github.com/jangkops/GPU-Observability-System" target="_blank" rel="noopener">
+          <span class="project-card__type project-card__type--github">GitHub</span>
+          <strong>GPU Observability System</strong>
+          <p>GPU 상태와 자원 지표를 추적하기 위한 관측성 중심 시스템</p>
+          <div class="chip-cloud">
+            <span class="chip">GPU</span>
+            <span class="chip">Observability</span>
+            <span class="chip">Monitoring</span>
+          </div>
+          <span class="project-card__link">GPU-Observability-System <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.65rem"></i></span>
+        </a>
+
+        <a class="project-card" href="https://github.com/devopslabs-jcg/kubernetes-practice" target="_blank" rel="noopener">
+          <span class="project-card__type project-card__type--github">GitHub</span>
+          <strong>Kubernetes Practice</strong>
+          <p>Kubernetes 운영 학습 내용을 체계적으로 정리한 실습 저장소</p>
+          <div class="chip-cloud">
+            <span class="chip">Kubernetes</span>
+            <span class="chip">학습 정리</span>
+          </div>
+          <span class="project-card__link">kubernetes-practice <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.65rem"></i></span>
+        </a>
+
+        <a class="project-card" href="https://github.com/devopslabs-jcg/CafeHeaven" target="_blank" rel="noopener">
+          <span class="project-card__type project-card__type--github">GitHub</span>
+          <strong>CafeHeaven</strong>
+          <p>빅데이터를 활용한 O2O 커피 주문/결제 서비스</p>
+          <div class="chip-cloud">
+            <span class="chip">Java</span>
+            <span class="chip">Spring Framework</span>
+            <span class="chip">빅데이터</span>
+            <span class="chip">O2O</span>
+          </div>
+          <span class="project-card__link">CafeHeaven <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.65rem"></i></span>
+        </a>
+
+        <a class="project-card" href="https://github.com/devopslabs-jcg/Kidsrock" target="_blank" rel="noopener">
+          <span class="project-card__type project-card__type--github">GitHub</span>
+          <strong>Kidsrock</strong>
+          <p>유원 정보 제공/예약 결제 서비스</p>
+          <div class="chip-cloud">
+            <span class="chip">Java</span>
+            <span class="chip">Spring Framework</span>
+            <span class="chip">예약/결제</span>
+          </div>
+          <span class="project-card__link">Kidsrock <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.65rem"></i></span>
+        </a>
+
+        <a class="project-card" href="https://github.com/devopslabs-jcg/Campingo" target="_blank" rel="noopener">
+          <span class="project-card__type project-card__type--github">GitHub</span>
+          <strong>Campingo</strong>
+          <p>캠핑 정보 제공/예약 결제 서비스</p>
+          <div class="chip-cloud">
+            <span class="chip">Java</span>
+            <span class="chip">Spring Framework</span>
+            <span class="chip">예약/결제</span>
+          </div>
+          <span class="project-card__link">Campingo <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.65rem"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How I Work -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section__title"><i class="fa-solid fa-handshake"></i> How I Work</h2>
+      <p class="section__subtitle">함께 일하는 방식과 가치관입니다.</p>
+      <div class="knowledge-grid">
+        <div class="knowledge-card">
+          <strong>과정에서 재미를 찾습니다</strong>
+          <p>목표 달성도 중요하지만 일의 과정에서 재미를 찾는 편이에요.</p>
+        </div>
+        <div class="knowledge-card">
+          <strong>긍정적 영향이 동기부여</strong>
+          <p>회사 및 조직 구성원에게 긍정적 영향을 주는 일은 그 자체로 동기부여가 됩니다.</p>
+        </div>
+        <div class="knowledge-card">
+          <strong>해결 방향을 찾습니다</strong>
+          <p>문제가 생겨도 그 상황 안에서 일을 진행할 수 있는 방향을 찾습니다.</p>
+        </div>
+        <div class="knowledge-card">
+          <strong>기한을 지킵니다</strong>
+          <p>함께 정한 기한은 반드시 지키려고 노력해요.</p>
+        </div>
+        <div class="knowledge-card">
+          <strong>새로운 기술에 관심</strong>
+          <p>새로운 트렌드 기술에 대해 관심을 갖고 익히는 것을 추구합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Competition & Hackathon -->
+  <section class="section section--alt">
+    <div class="container">
+      <h2 class="section__title"><i class="fa-solid fa-trophy"></i> 대회 참가</h2>
+      <p class="section__subtitle">참가한 해커톤 및 대회 이력입니다.</p>
+      <div class="knowledge-grid">
+        <div class="knowledge-card">
+          <span class="knowledge-card__eyebrow">Azure</span>
+          <strong>애저톤 (Azurethon)</strong>
+          <p>Microsoft Azure 기반 해커톤 대회 참가</p>
+        </div>
+        <div class="knowledge-card">
+          <span class="knowledge-card__eyebrow">AI</span>
+          <strong>AI Factory</strong>
+          <p>AI Factory 플랫폼 대회 참가</p>
+        </div>
+        <div class="knowledge-card">
+          <span class="knowledge-card__eyebrow">Hackathon</span>
+          <strong>해커톤</strong>
+          <p>해커톤 대회 참가 및 프로젝트 경험</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact-section">
+    <div class="container">
+      <h2 class="section__title" style="justify-content:center;"><i class="fa-solid fa-paper-plane"></i> Contact</h2>
+      <p style="margin-top:12px;">문의는 이메일 또는 방명록으로 남겨주세요.</p>
+      <a href="mailto:jangk34@naver.com" class="contact-section__email">jangk34@naver.com</a>
+      <div class="contact-section__links">
+        <a href="tel:+821025661153"><i class="fa-solid fa-phone"></i> 010-2566-1153</a>
+        <a href="https://cause.tistory.com/" target="_blank"><i class="fa-solid fa-blog"></i> 기술 블로그</a>
+        <a href="https://cause.tistory.com/guestbook" target="_blank"><i class="fa-solid fa-book-open"></i> 방명록</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      &copy; Cause Dev &mdash; JCG
+    </div>
+  </footer>
+
+</body>
+</html>
